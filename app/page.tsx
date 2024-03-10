@@ -7,28 +7,28 @@ export default function Home() {
 
   const handleSubmission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigation.push('app/matching-form');
+    navigation.push('/matching-form');
   };
 
   return (
     <main>
       <h1 className="text-3xl font-bold">Fundies Partner Match</h1>
     
-  <form onSubmit={handleSubmission} className="form">
-    <div className="form">
-      <label>Username: </label>
-      <input type="text" name="name" id="name" required />
-    </div>
-    <div className="form">
-      <label>Password: </label>
-      <input type="password" name="password" id="password" required />
-    </div>
-    <div className="form">
-      <input type="submit" value="Log In" />
-    </div>
-  </form>
-    
-    
+    <form onSubmit={handleSubmission} className="form">
+      <div className="form">
+        <label>Username: </label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div className="form">
+        <label>Password: </label>
+        <input type="password" name="password" id="password" required />
+      </div>
+      <div className="form">
+        <input type="submit" value="Log In" />
+      </div>
+    </form>
+
+
     </main>
   );
 }
