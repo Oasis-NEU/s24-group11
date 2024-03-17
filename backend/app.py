@@ -9,7 +9,7 @@ SUPABASE_API_KEY: str = os.getenv('SUPABASE_API_KEY')
 supabase: Client = create_client(SUPABASE_PROJECT_URL, SUPABASE_API_KEY)
 @app.route('/')
 def default():
-    return "Hello World"
+    return "hello world"
 
 @app.route('/supabase/login', methods=['POST'])
 def login():
@@ -22,9 +22,9 @@ def login():
 
 @app.route('/supabase/select')
 def select():
-    data = supabase.table("StudentSchedules").select("*").eq("id","73145d5a-78ef-4b5e-9809-a7041f62df1d").execute()
-    print(data.data)
-    return data.data
+    data = supabase.table("StudentPreferences").select("*").execute()
+    print(data)
+    return data
 
 @app.route('/supabase/update')
 def update():
