@@ -26,13 +26,10 @@ def select():
     print(data)
     return data
 
-@app.route('/supabase/update')
-def update():
-    return "Supabase UPDATE"
-
-@app.route('/supabase/delete')
-def delete():
-    return "Supabase DELETE"    
+@app.route('/generatestudentpairings')
+def generate():
+    data = supabase.table("StudentPreferences").select("*").execute()
+    print(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
