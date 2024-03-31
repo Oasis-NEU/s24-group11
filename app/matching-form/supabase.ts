@@ -5,11 +5,17 @@ export const supabase = createClient("https://zwbtoepdlduvsbfhbify.supabase.co",
 export const customTheme = {
     default: {
       colors: {
-        brand: 'hsl(0, 34%, 85%, 100%)', //color of button
-        brandAccent: 'hsl(0, 34%, 85%, 100%)', //outline of button
+        brand: 'rgb(254 202 202)', //color of button
+        brandAccent: 'rgb(254 202 202)', //outline of button
         brandButtonText: 'black', //text of button
-        inputBackground: 'hsl(0, 34%, 85%, 100%)', //color of email and password boxes
-        inputBorder: 'hsl(0, 34%, 85%, 100%)', //outline of above
+        inputBackground: 'rgb(254 202 202)', //color of email and password boxes
+        inputBorder: 'rgb(254 202 202)', //outline of above
+      },
+      fonts: {
+        bodyFontFamily: `ui-mono, sans-serif`,
+        buttonFontFamily: `ui-mono, sans-serif`,
+        inputFontFamily: `ui-mono, sans-serif`,
+        labelFontFamily: `ui-mono, sans-serif`,
       },
       borderWidths: {
         buttonBorderWidth: '1px',

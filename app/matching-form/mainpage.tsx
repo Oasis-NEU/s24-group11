@@ -1,4 +1,4 @@
-//import MatchingFormPage from "./MatchingFormPage"; // commented because we are simplifying our design
+/* //import MatchingFormPage from "./MatchingFormPage"; // commented because we are simplifying our design
 import Login from "./mainpage";
 
 //main page that shows the title and component of our login 
@@ -10,4 +10,4 @@ export default function FormPage() {
             <Login/ >
         </div>
     )
-}
+} */
