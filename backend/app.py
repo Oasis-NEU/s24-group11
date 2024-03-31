@@ -1,9 +1,9 @@
-import os
+import os, json
 from supabase_py import create_client, Client
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 
-from backend.matching import quantify_availability, pair_users
+from matching import quantify_availability, pair_users
 
 app = Flask(__name__)
 SUPABASE_PROJECT_URL: str = os.getenv('SUPABASE_PROJECT_URL')
@@ -21,7 +21,6 @@ def login():
     print(user)
     return "logged in"
 
-
 @app.route('/supabase/select')
 def select():
     data = supabase.table("StudentSchedules").select("*").execute()
@@ -31,7 +30,8 @@ def select():
 @app.route('/generatestudentpairings')
 def generate():
     data = supabase.table("StudentSchedules").select("*").execute()
-    return "Paired Users:" + pair_users(quantify_availability(data))
+    json_data = json.dumps(data)
+    return jsonify(pair_users(quantify_availability(json_data)))
     
 
 if __name__ == '__main__':
