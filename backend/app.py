@@ -22,14 +22,15 @@ def login():
 
 @app.route('/supabase/select')
 def select():
-    data = supabase.table("StudentPreferences").select("*").execute()
+    data = supabase.table("StudentSchedules").select("*").execute()
     print(data)
     return data
 
 @app.route('/generatestudentpairings')
 def generate():
-    data = supabase.table("StudentPreferences").select("*").execute()
+    data = supabase.table("StudentSchedules").select("*").execute()
     print(data)
+    return data
 
 if __name__ == '__main__':
     app.run(debug=True)
