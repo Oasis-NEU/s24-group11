@@ -3,6 +3,8 @@ from supabase_py import create_client, Client
 
 from flask import Flask, request, render_template
 
+from backend.matching import quantify_availability, pair_users
+
 app = Flask(__name__)
 SUPABASE_PROJECT_URL: str = os.getenv('SUPABASE_PROJECT_URL')
 SUPABASE_API_KEY: str = os.getenv('SUPABASE_API_KEY')
@@ -29,8 +31,8 @@ def select():
 @app.route('/generatestudentpairings')
 def generate():
     data = supabase.table("StudentSchedules").select("*").execute()
-    print(data)
-    return data
+    return "Paired Users:" + pair_users(quantify_availability(data))
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
