@@ -3,12 +3,13 @@
 import { supabase } from './supabase'
 import { useState, useEffect } from 'react'
 import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from "@supabase/auth-ui-shared" //this gives us a default design for supabase, working on changing this
 import { customTheme } from './supabase'
+
 
 //login page
 function Login() {
     const [session, setSession] = useState<any>(null)
+    
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }: { data: { session: any}}) => {
@@ -43,7 +44,6 @@ function Login() {
     } else {
         return (
             <div>
-                <h1>Fundies Partner Match Form</h1>
                 <button onClick={() => logOut()}> Log out </button>
                 <h1>Lab Section</h1>
                 <form>

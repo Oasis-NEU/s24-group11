@@ -1,6 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 
+
 export const supabase = createClient("https://zwbtoepdlduvsbfhbify.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3YnRvZXBkbGR1dnNiZmhiaWZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc2NzcyNTEsImV4cCI6MjAyMzI1MzI1MX0.tZ2yGHs06Oo71XJoM35aIUn85Nwbc-1x-sdr5N5-oTA")
+
 
 export const customTheme = {
     default: {
@@ -12,10 +14,10 @@ export const customTheme = {
         inputBorder: 'rgb(254 202 202)', //outline of above
       },
       fonts: {
-        bodyFontFamily: `ui-mono, sans-serif`,
-        buttonFontFamily: `ui-mono, sans-serif`,
-        inputFontFamily: `ui-mono, sans-serif`,
-        labelFontFamily: `ui-mono, sans-serif`,
+        bodyFontFamily: `ui-monospace, sans-serif`,
+        buttonFontFamily: `ui-monospace, sans-serif`,
+        inputFontFamily: `ui-monospace, sans-serif`,
+        labelFontFamily: `ui-monospace, sans-serif`,
       },
       borderWidths: {
         buttonBorderWidth: '1px',
